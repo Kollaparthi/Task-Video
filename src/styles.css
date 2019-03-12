@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --white: #ffffff;
+    --white1: #c2c2c2;
+    --black:#000000;
+    --labelcolor:#dddddd;
+    --inputblack:rgba(0,0,0,.5);
+    --inputwhite:rgb(40,40,40, .5);
+    /* --inputwhite:rgba(191, 234, 253, 0.5); */
+    --green: #333;
+    --blue: #00b9f5;
+  }
+  body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+  }
+  /* .pane{
+      background-color:#00ACE9;
+      
+  } */
+  .pane{
+    /* Location of the image */
+    background-image:url('./assets/bck2.jpg');
+    
+    height: 100%;
+  
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+  
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+  
+    /* Background image is fixed in the viewport so that it doesn't move when
+       the content's height is greater than the image's height */
+    background-attachment: fixed;
+  
+    /* This is what makes the background image rescale based
+       on the container's size */
+    background-size: cover;
+    }
+    #popuppane {
+      /* background-image: url("./assets/bck5.jpg"); */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: rgba(2, 2, 2, 0.5)
+      }
+      
+      @media only screen and (max-width: 767px) {
+        #popuppane {
+         background-color: rgba(2, 2, 2, 0.5)
+        }
+      }
+      

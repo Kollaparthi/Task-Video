@@ -1,0 +1,68 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:#fff;font-weight: 900">Mobiotics</a>
+    </div>
+    <form class="navbar-form" id="search" role="search">
+      <div class="form-group">
+        <input class="form-control home-search" type="search" placeholder="Search by Title" [(ngModel)]="search"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container maintable">
+  <div class="row">
+    <h3 style="color:var(--white);font-weight: 300">Treading Videos <span style="font-size:60%;color:var(--labelcolor);">Without
+        Shaka Player</span>
+    </h3>
+    <div class="col-lg-3 col-md-3 col-sm-3 customdiv" *ngFor="let cartoonVideos of CartoonVideos |nameFilter:search;let in=index;">
+      <img src="{{cartoonVideos.img}}" style="width: 100%;height: 100%;margin-top: 1.5em;" data-toggle="modal"
+        data-target="#myModal" (click)="cartoon(cartoonVideos, in)">
+      <h5 style="color:#fff">{{cartoonVideos.name}}</h5>
+      <p style="color:var(--labelcolor);font-weight: 300">{{cartoonVideos.views}} &nbsp;&nbsp;&nbsp;<span style="font-weight: 300;color:var(--labelcolor);">{{cartoonVideos.period}}</span></p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <h3 style="color:var(--white);font-weight: 300">Animation Videos <span style="font-size:60%;color:var(--labelcolor);">With
+        Shaka Player</span>
+    </h3>
+    <div class="col-lg-3 col-md-3 col-sm-3 customdiv" *ngFor="let animationVideos of  AnimationVideos | nameFilter:search;let i=index;"
+      data-toggle="modal" data-target="#myModal" (click)="animation(animationVideos, i)">
+      <img src="{{animationVideos.img}}" style="width: 100%;height: 100%;margin-top: 1.5em;">
+      <h5 style="color:#fff">{{animationVideos.name}}</h5>
+      <p style="color:var(--labelcolor);font-weight: 300">{{animationVideos.views}} &nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;color:var(--labelcolor);">{{animationVideos.period}}</span></p>
+    </div>
+  </div>
+  <hr>
+</div>
+<div class="container">
+  <div class="modal" id="myModal" role="dialog" [ngbCollapse]="showModal1" id="popuppane">
+    <div class="modal-dialog" role="document">
+      <div class="modal-body">
+        <button type="button" class="close" (click)="closeAnimation()">
+          &times;
+        </button>
+        <video id="video" width="600" controls #videoPlayer></video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="modal" id="myModal" role="dialog" [ngbCollapse]="showModal2" id="popuppane">
+    <div class="modal-dialog" role="document">
+      <div class="modal-body">
+        <button type="button" class="close" (click)="closeCartoon()">
+          &times;
+        </button>
+        <div *ngFor="let select of  selection ;">
+          <video id="video" width="600" controls #videoPlayer>
+            <source src="{{select.video}}" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

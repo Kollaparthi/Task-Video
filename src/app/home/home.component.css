@@ -1,0 +1,64 @@
+.panel {
+  margin-bottom: 20px;
+  background-color: var(--headercolor);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.maintable{
+    margin-top:5em;
+    padding: 30px;
+    background:var(--inputwhite);
+  }
+  #search{
+    display:block;
+    text-align:center;
+
+}
+@media (min-width: 768px) { .home-search { width: 400px; }}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { .home-search { width: 600px; } }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { .home-search { width: 800px; } }
+/* @media (min-width: 360px) { .home-search { width: 200px; } } */
+
+body {margin:2rem;}
+
+/* .modal-dialog {
+      max-width: px;
+      margin: 30px auto;
+  } */
+
+
+
+/* .modal-body {
+  position:relative;
+  padding:0px;
+} */
+.close {
+  position:absolute;
+  right:-30px;
+  /* top:0;
+  z-index:999; */
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
+}
+.blur-filter {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.blur-filter {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
